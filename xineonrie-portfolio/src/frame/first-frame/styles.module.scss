@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'MantouSans';
+    src: url('../../assets/fonts/MantouSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.bg {
+    background-color: '#F5F5F5';
+    height: '100%';
+    width: '100%';
+    position: relative;
+}
+
+.header {
+    top: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    margin-top:70px;
+    padding-left: 64px;
+    padding-right: 64px;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.h2 {
+    color: #FD6F00;
+    font-family: 'Myfont', MantouSans;
+    padding-left: 64px;
+    font-size: 24px;
+    line-height: 16px;
+    margin-top: -10px;
+
+}
+
+.right-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 80px;
+    
+    & > *{
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+
+    & > *:last-child {
+        padding: 8px 10px;
+        border-radius: 10px;
+        border: solid;
+        border-width: 2px;
+        font-weight: bold;
+    }
+}
+
+.left-part {
+    margin-left: 80px;
+    align-items: center;
+
+    & > * :hover{
+        color: #FD6F00;
+        cursor: pointer;
+    }
+}
+
+.fadein-animate {
+    animation: fadein 1s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        margin-top: 0px;
+    }
+  
+    to {
+        opacity: 1;
+        margin-top: 100px;
+    }
+  }
+
+.h2-container {
+    margin-top: 100px;
+}
+
+.describe-text {
+    width: 700px;
+    color: #727272;
+    position: absolute;
+    top: 60vh;
+    right: 50px;
+}
+
+.scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
