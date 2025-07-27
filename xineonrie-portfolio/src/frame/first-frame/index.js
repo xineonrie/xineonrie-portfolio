@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import LinkedInIcon from '../../assets/svg/LinkedInIcon';
 import MailIcon from '../../assets/svg/mailIcon';
+import Download from '../../assets/svg/Download';
 import img1 from '../../assets/figures/star-shape-2.png';
 import img2 from '../../assets/figures/star-shape.png';
 import img3 from '../../assets/figures/up-arrow-shape.png';
@@ -12,6 +13,7 @@ import classNames from 'classnames';
 
 import AnimatedTitle from '../../components/AnimatedTitle';
 import AnimatedItems from '../../components/AnimatedItems';
+import ParallaxScene from '../../components/ParallaxScene';
 
 const cx = classNames;
 
@@ -19,10 +21,10 @@ const cx = classNames;
 function FirstFrame() {
   const [animeH2, setAnimeH2] = useState(false)
   const imageList = [
-    { src: img1, style: { top: '0%', left: '0%' } },
-    { src: img2, style: { top: '40%', left: '80%'} },
-    { src: img3, style: { bottom: '-20%', left: '10%'} },
-    { src: img4, style: { top: '-20%', right: '10%'} },
+    { src: img1, style: { top: '20vh', left: '-10vw' } },
+    { src: img2, style: { top: '20vh', left: '70vw'} },
+    { src: img3, style: { top: '50vh', left: '10vw'} },
+    { src: img4, style: { top: '-20vh', left: '50vw'} },
   ];
     useEffect(() => {
     setTimeout(() => {
@@ -41,7 +43,7 @@ function FirstFrame() {
             <div>About me</div>
             <div>Projects</div>
             <div>Contacts</div>
-            <div>Get my CV</div>
+            <div>My Resume <Download style={{marginLeft: '6px'}} /></div>
           </div>
         </div>
         <div className={styles.content}>
@@ -57,8 +59,11 @@ function FirstFrame() {
           Thrive in fast-paced Agile teams, with a strong ability to quickly learn and apply new frameworks. Actively seeking opportunities to build scalable, intuitive UIs in growth-driven teams.
         </div>
         <div className={styles.scene}>
-          {imageList.map((img, i) => <AnimatedItems key={i} url={img.src} style={img.style}/>)}
+        <ParallaxScene>
+          {imageList.map((img, i) => <AnimatedItems key={i} url={img.src} style={img.style}/>)} 
+        </ParallaxScene>
         </div>
+
     </div>
   );
 }

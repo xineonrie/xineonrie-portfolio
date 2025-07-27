@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import ReactFullpage from '@fullpage/react-fullpage';
 import FirstFrame from './first-frame';
+import SecondFrame from './second-frame';
 import styles from './styles.module.scss'
 
 function Fullpage() {
@@ -12,10 +13,9 @@ function Fullpage() {
     <div className={styles.frame}>
       <div className={styles.section}>
         <FirstFrame />
-   
       </div>
       <div className={styles.section}>
-        2
+        <SecondFrame />
       </div>
       <div className={styles.section}>
         3
