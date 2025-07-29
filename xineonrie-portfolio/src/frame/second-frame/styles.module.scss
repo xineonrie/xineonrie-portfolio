@@ -9,26 +9,169 @@
     height: 100%;
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .content {
-    height: 100%;
     width: 100%;
+    height: 100%;
     position: relative;
-    padding: 32px;
     background-color: #FD6F00;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    align-items: center;
+  
 
    .left-part {
+        height: calc(100% - 10vh);
+        margin-left: 5vh;
+        max-width: 50%;             // 平分父容器宽度，允许收缩/扩展
+        min-width: 0;   
+        // width: 48%;
+  
+        // border-radius: 24px;
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        overflow: hidden;
+        gap: 20px;
+        flex-shrink: 0;
+
+      .left-roll {
         height: 100%;
-        width: 800px;
-        background-color: aliceblue;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 0;              // 平分父容器宽度，允许收缩/扩展
+        min-width: 0;   
+        // overflow: scroll;
+        // scroll-behavior: smooth;
+  
+        // /* optional: hide scroll bar */
+        // scrollbar-width: none; /* Firefox */
+        // &::-webkit-scrollbar {
+        //   display: none; /* Chrome / Safari */
+        // }
+      }
+
+      .right-roll {
+        height: 100%;
+        display: flex;
+        top: -10vh;
+        flex: 1 1 0;   
+        flex-direction: column;
+        overflow: scroll;
+        scroll-behavior: smooth;
+  
+        /* optional: hide scroll bar */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+          display: none; /* Chrome / Safari */
+        }
+      }
+
+      .roll-item {
+        background-color: #ffffff;
+        height: 500px;
+        border-radius: 24px;
+        flex-shrink: 0;
+        margin-bottom: 20px;
+      }
    }
 
    .right-part {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    padding-right: 5vh;
+    height: 100%;
+   }
 
+   .right-top {
+      font-family: 'Myfont', MantouSans;
+      font-size: 15vh;
+      position: absolute;
+      top: -5vh;
+      height: 20vh;
+      left: 0;
+      overflow: hidden;
+   }
+
+   .right-content {
+      margin-top: 15vh;
+      margin-left: 3vw;
+      align-self: flex-start;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 20vh);
+      font-size: 2vh;
+
+      &-text {
+        text-align: justify;
+      }
+
+      .degree-title{
+        margin-top: -1.5vh;
+      }
+
+
+      .degree-first {
+        font-size: 2vh;
+        font-weight: bold;
+      }
+
+      .degree-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .sub-container {
+          text-align: left;
+        }
+
+        .degree-border {
+          display: inline-block;
+          font-weight: bold;
+        }
+      }
+   }
+
+   .right-bottom {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    gap: 1vh;
+    margin-top: 1vh;
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr); // 2列
+    grid-template-rows: repeat(3, 1fr);    // 3行
+
+    .skill-container {
+      background-color: black;
+      // border: solid;
+      box-sizing: border-box;
+      // min-height: 100px; 
+      border-radius: 1vh;
+      height: auto;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-title {
+      font-family: 'Myfont', MantouSans;
+      color: #FD6F00;
+      font-size: 2.2vh;
+      margin-top: -0.3vh;
+      margin-right: 1vh;
+    }
+
+    .skill-text{
+      color: #FD6F00;
+      font-size: 2vh;
+      position: absolute;
+      top: 1vh;
+      right: 1vh;
+    }
    }
 }
-

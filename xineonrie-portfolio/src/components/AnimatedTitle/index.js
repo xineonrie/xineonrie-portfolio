@@ -1,10 +1,11 @@
 import React from "react";
 import styles from './styles.module.scss'
 
-const AnimatedTitle = ({text}) => {
+const AnimatedTitle = (props) => {
+    const { text, size } = props
     return (
-        <div className={styles.h1}>
-            {text.split('').map((item,index) =>
+        <div className={styles.h1}  style={{fontSize: size ? `${size}` : '12vh'}}>
+            {text?.split('').map((item,index) =>
                 <span
                     key={index}
                     className={styles.char}
