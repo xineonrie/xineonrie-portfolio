@@ -14,7 +14,6 @@ import img05 from './source/05.JPG';
 
 const cx = classNames;
 
-
 function SecondFrame() {
     const leftCol = [{
       img: img01,

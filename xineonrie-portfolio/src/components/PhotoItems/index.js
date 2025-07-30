@@ -34,7 +34,7 @@ const PhotoItems = (props) => {
                 >
                       <img className={styles['img']} src={item.img} />
                     {
-                        // ishover[i] && 
+                        ishover[i] && 
                         (
                             <div className={styles['item-box']}>
                                 <div className={styles['item-title']} >{item.time ||' '}</div>

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import ReactFullpage from '@fullpage/react-fullpage';
 import FirstFrame from './first-frame';
 import SecondFrame from './second-frame';
+import ThirdFrame from './third-frame';
+import FourthFrame from './fourth-frame';
 import styles from './styles.module.scss'
 
 function Fullpage() {
@@ -18,13 +20,10 @@ function Fullpage() {
         <SecondFrame />
       </div>
       <div className={styles.section}>
-        3
+        <ThirdFrame />
       </div>
       <div className={styles.section}>
-        4
-      </div>
-      <div className={styles.section}>
-        5
+        <FourthFrame />
       </div>
     </div>
   )
