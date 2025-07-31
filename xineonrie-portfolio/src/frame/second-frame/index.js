@@ -14,7 +14,8 @@ import img05 from './source/05.JPG';
 
 const cx = classNames;
 
-function SecondFrame() {
+function SecondFrame(props) {
+    const {isCurrent} = props;
     const leftCol = [{
       img: img01,
       title: 'Where I worked',
@@ -48,6 +49,9 @@ function SecondFrame() {
       poi: 'Australia, Adelaide',
       time:'2024'
     }]
+    // useEffect(() => {
+    //   console.log('?????', isCurrent)
+    // }, [isCurrent])
 
   return (
     <div className={styles.bg} >
@@ -67,7 +71,7 @@ function SecondFrame() {
               <div className={styles['right-top']}> 
                 <MarqueeTitle title='ABOUT ME' />
               </div>
-              <div className={styles['right-content']}>
+              {isCurrent && (<div className={styles['right-content']}>
                  <AnimatedTitle text='PROFILE' size='4vh' />
                  <p className={styles['right-content-text']}>I’m Nelly Wang, a front-end developer with a strong background in cross-platform app development. After earning my bachelor’s degree in <b>Telecommunication Engineering in Beijing University of Posts and Telecommunications</b>, I spent two years at <b>TikTok China</b>, focusing on high-performance UI systems and low-code solutions. Currently, I’m completing my Master’s in <b>Computer Science</b> at the <b>University of Adelaide</b>, and I’m actively looking for opportunities to bring scalable and intuitive user experiences to life.</p>
                  <AnimatedTitle text='EDUCATION' size='4vh' />
@@ -115,7 +119,7 @@ function SecondFrame() {
                     <p  className={styles['skill-text']}>Agile / Performance Optimization</p>
                     </div>
                  </div>
-              </div>
+              </div>)}
 
             </div>
 

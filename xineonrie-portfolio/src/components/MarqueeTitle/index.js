@@ -7,7 +7,6 @@ const cx = classNames;
 const MarqueeTitle = (props) => {
     const {title, gap='5vw', speed= 20} = props;
     const titleRef = useRef(null)
-    console.log(title)
     return (
         <div className={styles['marquee-wrapper']}>
             <div className={styles['marquee-track']}
