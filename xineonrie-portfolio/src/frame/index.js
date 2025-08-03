@@ -6,6 +6,9 @@ import SecondFrame from './second-frame';
 import ThirdFrame from './third-frame';
 import FourthFrame from './fourth-frame';
 import styles from './styles.module.scss'
+import ArrowBarUp from '../assets/svg/arrowBarUp';
+import classNames from 'classnames';
+const cx = classNames;
 
 function Fullpage() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -23,10 +26,23 @@ function Fullpage() {
     }
   }
 
+  const scrollToTop = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+  const scrollToProjects = (item) =>{
+    if (containerRef.current) {
+      const containerHeight = containerRef.current.clientHeight;
+      containerRef.current.scrollTo({ top: item*containerHeight, behavior: 'smooth' });
+    }
+  }
+
   return (
     <div className={styles.frame} ref={containerRef} onScroll={handleScroll}>
+      {currentPage !==0 &&<div onClick={scrollToTop} className={cx(currentPage !==3 ? styles['top-button'] :  styles['top-button-white'])}><ArrowBarUp width={'3vh'} height={'3vh'} /></div>}
       <div className={styles.section} ref={sectionRefs[0]}>
-        <FirstFrame isCurrent={currentPage === 0} />
+        <FirstFrame isCurrent={currentPage === 0} callFn={scrollToProjects} />
       </div>
       <div className={styles.section} ref={sectionRefs[1]}>
         <SecondFrame isCurrent={currentPage === 1} />

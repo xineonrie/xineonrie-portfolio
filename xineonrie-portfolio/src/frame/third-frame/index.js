@@ -44,6 +44,12 @@ function ThirdFrame(props) {
         };
     }, [canScroll, items.length])
 
+    useEffect(()=>{
+        if(!isCurrent) {
+            setCurrentIndex(0)
+        }
+    }, [isCurrent])
+
     return (
     <div className={styles.bg} ref={containerRef}>
        { isCurrent && (<div className={styles.title}>

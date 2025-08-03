@@ -38,3 +38,34 @@
       display: none; /* Chrome / Safari */
     }
 }
+
+.top-button{
+  position: fixed;
+  width: 5vh;
+  height: 5vh;
+  border: solid;
+  border-radius:10vh;
+  bottom: 3vh;
+  right: 3vw;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &-white {
+    color: white;
+    position: fixed;
+    width: 5vh;
+    height: 5vh;
+    border: solid;
+    border-radius:10vh;
+    bottom: 3vh;
+    right: 3vw;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}

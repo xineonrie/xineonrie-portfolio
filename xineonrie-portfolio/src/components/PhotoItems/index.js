@@ -40,8 +40,8 @@ const PhotoItems = (props) => {
                                 <div className={styles['item-title']} >{item.time ||' '}</div>
                                 <div className={styles['item-second']} ><Poi /> {item.poi ||' '}</div>
                                 <div className={styles['item-sub']}>
-                                    <p className={styles['item-third']}>{item.title}</p>
-                                    <p className={styles['item-fourth']}>{item.description}</p>
+                                    {/* <p className={styles['item-third']}>{item.title}</p> */}
+                                    {/* <p className={styles['item-fourth']}>{item.description}</p> */}
                                 </div>
                             </div>
                            

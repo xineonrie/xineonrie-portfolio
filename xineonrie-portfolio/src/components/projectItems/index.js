@@ -41,7 +41,7 @@ const ProjectItems = (props) => {
                  <p className={styles['inner-text']}>{content[index]['p1']}</p>
                  <p className={styles['inner-text']}>{content[index]['p2']}</p>
                  <p className={styles['inner-text']}>{content[index]['p3']}</p>
-                 {content[index].link &&<span className={styles['click-box']}>CHECK IT OUT</span>}
+                 {content[index].link &&<a className={styles['click-box']} href={content[index].link}>CHECK IT OUT</a>}
             </div>
          
         </div>

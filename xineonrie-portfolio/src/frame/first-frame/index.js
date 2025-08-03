@@ -8,6 +8,7 @@ import img1 from '../../assets/figures/star-shape-2.png';
 import img2 from '../../assets/figures/star-shape.png';
 import img3 from '../../assets/figures/up-arrow-shape.png';
 import img4 from '../../assets/figures/triangle-shape.png';
+import resume from './Nelly_Wang_Resume_Frontend_2025.pdf';
 
 import classNames from 'classnames';
 
@@ -18,7 +19,7 @@ import ParallaxScene from '../../components/ParallaxScene';
 const cx = classNames;
 
 
-function FirstFrame() {
+function FirstFrame(props) {
   const [animeH2, setAnimeH2] = useState(false)
   const imageList = [
     { src: img1, style: { top: '20vh', left: '-10vw' } },
@@ -36,22 +37,21 @@ function FirstFrame() {
     <div className={styles.bg} >
         <div className={styles.header}>
           <div className={styles['left-part']}>
-            <LinkedInIcon />
-            <MailIcon style={{marginLeft: '16px'}} />
+            <a href='https://www.linkedin.com/in/yuyan-wang-36a846281'><LinkedInIcon /></a>
+            <a href='mailto:xineorie@gmail.com?subject=Contact'><MailIcon style={{marginLeft: '16px'}} /></a>
           </div>
           <div className={styles['right-part']}>
-            <div>About me</div>
-            <div>Projects</div>
-            <div>Contacts</div>
-            <div>My Resume <Download style={{marginLeft: '6px'}} /></div>
+            <div onClick={() => {props.callFn(1)}}>About me</div>
+            <div onClick={() => {props.callFn(2)}}>Projects</div>
+            <div onClick={() => {props.callFn(3)}}>Contacts</div>
+            <div ><a className={styles['download-btn']} href={resume} download={resume}>My Resume <Download style={{marginLeft: '6px'}} /></a> </div>
           </div>
         </div>
         <div className={styles.content}>
           <AnimatedTitle style={{marginTop: '64px'}} text='Hi, I’m Nelly Wang' />
           <div className={cx({[styles['fadein-animate']]: animeH2}, styles['h2-container'])}>
             <p className={styles.h2}>WEB DEVELOPER</p>
-            <p className={styles.h2}>UI DESIGNER</p>
-            <p className={styles.h2} style={{marginTop:'20px'}}>AND AN ILLUSTRATOR.</p>
+            <p className={styles.h2}>AND AN UI DESIGNER</p>
           </div>
         </div>
         <div className={styles['describe-text']}>
