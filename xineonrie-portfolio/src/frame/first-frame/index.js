@@ -54,7 +54,7 @@ function FirstFrame(props) {
             <p className={styles.h2}>AND AN UI DESIGNER</p>
           </div>
         </div>
-        <div className={styles['describe-text']}>
+        <div className={cx({[styles['fadein-animate']]: animeH2}, styles['describe-text'])}>
           <p>Front-End Developer with 2+ years of experience in high-performance cross-platform app development at TikTok China. Skilled in React, TypeScript, and ECharts. </p>
           Thrive in fast-paced Agile teams, with a strong ability to quickly learn and apply new frameworks. Actively seeking opportunities to build scalable, intuitive UIs in growth-driven teams.
         </div>
