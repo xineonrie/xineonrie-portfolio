@@ -1,2 +1,0 @@
-# xineonrie-portfolio
-personal website
